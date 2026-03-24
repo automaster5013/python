@@ -3,6 +3,4 @@ inp = input()
 #print(inp)
 print(len(inp))
 
-print('Hello World!')
-
 
