@@ -46,3 +46,20 @@ print(letter.count('how'))  #특정 단어의 수
 
 letter = 'how are you?'
 print(letter.count('o'))    #특정 글자의 수
+
+s1 = '나도고등학교'
+print(s1.startswith('나도'))    #특정 글자의 시작
+print(s1.endswith('초등학교'))    #특정 글자의 끝
+print(s1.endswith('고등학교'))    #특정 글자의 끝
+
+s2 = '...나도고등학교...'
+print(s2.strip('.'))    #앞뒤로 불필요한 부분 잘라내기
+
+s3 = '.,.나도고등학교.,.'
+print(s3.strip('.'))    #앞뒤로 불필요한 부분 잘라내기
+
+s4 = '나도고등학교'
+print(s4.replace('고등학교', '고교'))    #'고등학교'를 '고교'로 변환하기
+
+s5 = '나도고교너도고교'
+print(s5.replace('고교', '고등학교'))    #'고교'를 '고등학교'로 변환하기
