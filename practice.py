@@ -1,6 +1,6 @@
 print('Hello World')
 
-//연산자 연습 예제
+#연산자 연습 예제
 print(5 + 2)
 print(5 - 2)
 print(5 * 2)
