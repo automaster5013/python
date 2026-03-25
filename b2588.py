@@ -1,13 +1,11 @@
-A = int(input())
-B_str = input()
+a = int(input().strip())
+b = int(input().strip())
 
-step1 = A * int(B_str[2])   # 5
-step2 = A * int(B_str[1])   # 8
-step3 = A * int(B_str[0])   # 3
+ones_place = b % 10             # 5     ' % ' 연산자 (Modulo) - 나누기를 수행한 후 남은 나머지를 구합니다.
+tens_place = (b // 10) % 10     # 8     '//' 연산자 (Floor Division): 
+hundreds_place = b // 100       # 3      - 나누기를 수행한 뒤, 소수점 이하를 버리고 **결과의 정수 부분(몫)**만 남깁니다.
 
-total = A * int(B_str)
-
-print(step1)
-print(step2)
-print(step3)
-print(total)
+print(a * ones_place)
+print(a * tens_place)
+print(a * hundreds_place)
+print(a * b)
