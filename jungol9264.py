@@ -14,7 +14,7 @@ for i in range (2, N + 1, 2):
 N = int(input())
 print(N)
 
-for x in ranege(2, N + 1, 2):
+for x in range(2, N + 1, 2):
     print(x, end=' ')
 
 ########################################################

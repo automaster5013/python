@@ -3,8 +3,8 @@ for n in sorted(map(int, input().split())):
 
 ###############################################################(방법01)
 
-# a, b = map(int, input().split())
-# print(min(a, b))
-# print(max(a, b))
+a, b = map(int, input().split())
+print(min(a, b))
+print(max(a, b))
 
 ###############################################################(방법02)
