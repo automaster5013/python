@@ -1,0 +1,9 @@
+def my_function():          # 함수정의부
+    print('새로운')
+    print('함수를')
+    print('만들었어요')
+
+my_function()       # 함수호출부
+
+
+
