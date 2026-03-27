@@ -5,5 +5,3 @@ def my_function():          # 함수정의부
 
 my_function()       # 함수호출부
 
-
-

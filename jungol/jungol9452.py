@@ -15,12 +15,13 @@ def print_hello():
     print("Hello")
 
 N, M = map(int, input().split())
-# print(N, M)
+
 for i in range(N):
     print("Hello")
 print()
+
 for i in range(M):
     print("Hello")
 
-############################################################(방법01)
+############################################################(방법02)
 
