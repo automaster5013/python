@@ -1,3 +1,5 @@
 print('*   *')
 print(' * *')
 print('  *')
+
+

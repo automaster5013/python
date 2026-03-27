@@ -8,9 +8,7 @@
 #출력(해당 경우 아무 것도 출력하지 않는다)
 
 N = input()
-# print(N)
 
 if int(N) > 10:
     print('Big')
-
 

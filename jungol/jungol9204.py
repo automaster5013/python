@@ -1,10 +1,10 @@
-# import sys
-# a1, a2, a3, a4, a5, a6, a7 = map(int, sys.stdin.read().split())
-# # print(a1, a2, a3, a4, a5, a6, a7)
+import sys
+a1, a2, a3, a4, a5, a6, a7 = map(int, sys.stdin.read().split())
+# print(a1, a2, a3, a4, a5, a6, a7)
 
-# res = (a1 + 2, a2 - 2, a3 * 2, a4 / 2, a5 // 2, a6 % 2, a7 ** 2)
+res = (a1 + 2, a2 - 2, a3 * 2, a4 / 2, a5 // 2, a6 % 2, a7 ** 2)
 
-# print(*res)
+print(*res)
 
 ###############################################################(방법01)
 
@@ -36,12 +36,14 @@ print((n7 ** 2), end=' ')
 
 ###############################################################(방법02)
 
-# a=int(input())
-# b=int(input())
-# c=int(input())
-# d=int(input())
-# e=int(input())
-# f=int(input())
-# g=int(input())
+a=int(input())
+b=int(input())
+c=int(input())
+d=int(input())
+e=int(input())
+f=int(input())
+g=int(input())
 
-# print(f"{a+2} {b-2} {c*2} {d/2} {e//2} {f%2} {g**2}")
+print(f"{a+2} {b-2} {c*2} {d/2} {e//2} {f%2} {g**2}")
+
+###############################################################(방법03)

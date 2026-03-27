@@ -14,4 +14,3 @@ print(N)
 if N < 0:
     print("MINUS")
 
-
