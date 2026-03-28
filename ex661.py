@@ -7,7 +7,7 @@ if foul:
     if yellow_card == 2:
         print("경고 누적 퇴장")
     else:
-        print("휴..조심해야지")     # 휴..조심해야지
+        print("휴..조심해야지")     // 휴..조심해야지
 else:
     print("주의!")
 
@@ -18,7 +18,7 @@ foul = True
 if foul:
     yellow_card += 1
     if yellow_card == 2:
-        print("경고 누적 퇴장")     # 경고 누적 퇴장
+        print("경고 누적 퇴장")     // 경고 누적 퇴장
     else:
         print("휴..조심해야지")
 else:
@@ -35,7 +35,4 @@ if foul:
     else:
         print("휴..조심해야지")
 else:
-    print("주의!")                 # 주의!
-
-###########################################################################
-
+    print("주의!")                 // 주의!
