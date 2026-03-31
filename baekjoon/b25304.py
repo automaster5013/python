@@ -16,7 +16,9 @@ else:
 #####################################################################################################(방법01)
 
 X = int(input())
+# print(X)
 N = int(input())
+# print(N)
 
 total_price = sum(a * b for _ in range(N) for a, b in [map(int, input().split())])
 print("Yes" if total_price == X else "No")
