@@ -4,7 +4,7 @@ class Parent:
 
 class Children(Parent):
     def method_b(self):
-        super().method_a()
+        super().method_a()  # 부모Class로부터 상속받음(super())
         print("method_b()")
 
 # p1 = Parent()

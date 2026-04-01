@@ -16,6 +16,7 @@ class TravelBlackBox(BlackBox, VideoMaker, MailSender):
         # BlackBox.__init__(self, name, price)
         super().__init__(name, price)
         self.sd = sd
+
     def set_travel_mode(self, min):
         print(self.name, str(min) + '분 동안 여행 모드 ON')
 
@@ -32,4 +33,5 @@ b2 = AdvancedTravelBlackBox('초록이',120000, 64)
 b2.set_travel_mode(15)
 
 ########################################("다중상속" + "메소드 오버라이딩")#####################################
+####### 메소드와 인스턴스의 관계 정립########
 
