@@ -1,9 +1,7 @@
 T = int(input())
-# print(T)
 
 for _ in range(T):
     R, S = input().split()
-    # print(R, S)
     R = int(R)
 
     for char in S:
@@ -13,11 +11,9 @@ for _ in range(T):
 ###############################################(방법01)
 
 T = int(input())
-# print(T)
 
 for _ in range(T):
     R, S = input().split()
-    # print(R, S)
     R = int(R)
     
     result = ''.join([char * R for char in S])
@@ -28,35 +24,18 @@ for _ in range(T):
 T = int(input())
 for _ in range(T):
     R, S = input().split()
-    # print(R, S)
 
     print(*(char * int(R) for char in S), sep='')
 
 ###############################################(방법03)
 
 T = int(input())
-# print(T)
-
-for n in range(T):
-    R, S = input().split()
-    # print(R, S)
-    R = int(R)
-    
-    for i in S:
-        for j in range(int(R)):
-            print(i, end = '')
-
-###############################################(방법04)
-
-T = int(input())
-# print(T)
 
 lstr = []
 lsts = []
 
 for n in range(T):
     R, S = input().split()
-    # print(R, S)
     lstr.append(int(R))
     lsts.append(S)
 
@@ -70,7 +49,7 @@ for m in range(T):
 
     print()    
 
-###############################################(방법05)
+###############################################(방법04)
 
 T = int(input())
 
@@ -83,5 +62,5 @@ for _ in range(T):
     
     print()
 
-###############################################(방법06)
+###############################################(방법05)
 
