@@ -34,7 +34,8 @@ class S:
         if self.N >= 0:
             Q.append(str(self.N))
 
-Q=[]
+Q = []
+
 for i in range(5):
     N = int(input())
     P = S(N)
