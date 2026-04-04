@@ -3,3 +3,4 @@ my_list.sort()
 print(my_list)
 
 #############################(리스트의 sort method 사용)
+
