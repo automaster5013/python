@@ -22,7 +22,6 @@ def insert_emp(): # empno, ename, job, mgr, hiredate, sal, comm, deptno
     empno, ename = input().split()
     print(empno, ename)
 
-#INSERT 예제
     try:
         # INSERT INTO EMP(EMPNO, ENAME) VALUES('1234','LEO')
         cursor.execute("INSERT INTO EMP(EMPNO, ENAME) VALUES (:1, :2)", [empno, ename.upper()])
