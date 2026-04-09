@@ -76,3 +76,5 @@ while loop:
 cursor.close()
 conn.close()
 
+
+
