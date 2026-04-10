@@ -22,14 +22,17 @@ def insert_emp(): # empno, ename, job, mgr, hiredate, sal, comm, deptno
     empno, ename = input().split()
     print(empno, ename)
 
-#INSERT 예제
-    try:
-        # INSERT INTO EMP(EMPNO, ENAME) VALUES('1234','LEO')
-        cursor.execute("INSERT INTO EMP(EMPNO, ENAME) VALUES (:1, :2)", [empno, ename.upper()])
-        conn.commit()
-        print("Data inserted successfully")
-    except oracledb.DatabaseError as e:
-        print(f"Error inserting data: {e}")
+    if empno.isdigit():
+# INSERT 예제
+        try:
+            # INSERT INTO EMP(EMPNO, ENAME) VALUES('1234','LEO')
+            cursor.execute("INSERT INTO EMP(EMPNO, ENAME) VALUES (:1, :2)", [empno, ename.upper()])
+            conn.commit()
+            print("Data inserted successfully")
+        except oracledb.DatabaseError as e:
+            print(f"Error inserting data: {e}")
+    else:
+        print("MYEONGHWI-0001 : 사번 입력 오류입니다. 숫자만 입력 가능합니다.")
 
 
 def delete_emp():
@@ -49,8 +52,9 @@ def delete_emp():
 
 
 def search_emp():
+# SELECT 예제
     try:
-        cursor.execute("SELECT * FROM emp")
+        cursor.execute("SELECT EMPNO, ENAME, JOB, HIREDATE, SAL FROM EMP ORDER BY EMPNO")
         for row in cursor:
             print(row)
     except oracledb.DatabaseError as e:
