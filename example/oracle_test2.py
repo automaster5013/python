@@ -57,6 +57,7 @@ def delete_emp(): # empno, ename, job, mgr, hiredate, sal, comm, deptno
                 # DELETE FROM EMP WHERE EMPNO='4769'
                 cursor.execute("DELETE FROM EMP WHERE EMPNO = :1", [empno])
                 conn.commit()
+                
                 print("Data deleted successfully")
 
                 if cursor.rowcount == 0:
@@ -65,6 +66,7 @@ def delete_emp(): # empno, ename, job, mgr, hiredate, sal, comm, deptno
                     conn.commit()
 
                     print(f"사번 {empno}번 직원이 삭제되었습니다.")
+
             except oracledb.DatabaseError as e:
                 print(f"Error inserting data: {e}")
 
@@ -78,9 +80,10 @@ def search_emp():
 # SELECT 예제 (----> Person Object List 만들기)
     print("[System] DB에서 최신 데이터를 동기화합니다...")
     try:
-        cursor.execute('''SELECT EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO 
-        FROM EMP 
-        ORDER BY EMPNO''')
+        cursor.execute('''
+            SELECT EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO 
+            FROM EMP 
+            ORDER BY EMPNO''')
         for row in cursor:
             # print(row)
             p = Person(*row) 
