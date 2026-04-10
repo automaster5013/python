@@ -7,6 +7,22 @@ conn = oracledb.connect(user="c##mbc", password="qwer1234", dsn=dsn)
 # 쿼리 실행을 위한 커서 생성
 cursor = conn.cursor()
 
+
+class Person:
+    def __init__(self, empno, ename, job, mgr, hiredate, sal, comm, deptno):
+        self.empno = empno
+        self.ename = ename 
+        self.job = job
+        self.mgr = mgr
+        self.hiredate = hiredate
+        self.sal = sal
+        self.comm = comm
+        self.deptno = deptno
+
+    def print_person(self):
+        print(f"{self.empno} : {self.ename} : {self.job} : ({self.mgr}) : [{self.hiredate}] : {self.sal} : {self.comm} / {self.deptno}")
+
+
 def show_menu():
     print("\n-- 임직원 관리 시스템 --")
     print("- 1. 직원 추가     -")
@@ -52,17 +68,25 @@ def delete_emp():
 
 
 def search_emp():
-# SELECT 예제
+# SELECT 예제 (----> Person Object List 만들기)
+    person_list = []
     try:
-        cursor.execute("SELECT EMPNO, ENAME, JOB, HIREDATE, SAL FROM EMP ORDER BY EMPNO")
+        cursor.execute('''SELECT EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO 
+        FROM EMP 
+        ORDER BY EMPNO''')
         for row in cursor:
-            print(row)
+            p = Person(*row) 
+            person_list.append(p)
+            
+        print(f"\n 총 {len(person_list)}명의 직원이 조회되었습니다.")
+        for p in person_list:
+            p.print_person()
+
     except oracledb.DatabaseError as e:
         print(f"Error fetching data: {e}")
 
 
-loop = True
-while loop:
+while True:
     select = int(show_menu())
     if select == 1:
         print("1. 직원 추가 메뉴")
@@ -75,9 +99,10 @@ while loop:
         search_emp()
     else:
         print("프로그램 종료 ***")
-        loop = False
+        break
 
 # 커서 및 커넥션 닫기
 cursor.close()
 conn.close()
+print("DB 연결이 해제되었습니다.")
 
