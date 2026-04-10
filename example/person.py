@@ -10,7 +10,7 @@ class Person:
         self.deptno = deptno
 
     def print_person(self):
-        # print(f"{self.empno} : {self.ename} => {self.job} : ({self.mgr}) : [{self.hiredate}] : {self.sal} : {self.comm} / {self.deptno}")
+        # print(f"{self.empno} : {self.ename} : {self.job} : {self.mgr} : {self.hiredate} : {self.sal} : {self.comm} : {self.deptno}")
         if self.sal is not None:
             print(f"{self.empno} : {self.ename:>10} : {self.sal}")
         else:
