@@ -1,5 +1,5 @@
 import oracledb
-from person import Person       # Model
+from person import Person     # Model
 
 # 데이터베이스 접속 정보 설정
 dsn = oracledb.makedsn("localhost", 1521, service_name="XE")
@@ -8,7 +8,7 @@ conn = oracledb.connect(user="c##mbc", password="qwer1234", dsn=dsn)
 # 쿼리 실행을 위한 커서 생성
 cursor = conn.cursor()
 
-person_list = []    # 전역변수로 리스트 선언
+person_list = []    # 전역변수로 LIST를 선언
 
 def show_menu():
     print("\n-- 임직원 관리 시스템 --")
@@ -17,9 +17,8 @@ def show_menu():
     print("- 3. 직원 조회     -")
     print("- 4. 프로그램 종료 -")
     menu_num = input("메뉴를 선택해 주세요: ")
-    # print(menu_num)
+    print(menu_num)
     return menu_num
-
 
 def insert_emp(): # empno, ename, job, mgr, hiredate, sal, comm, deptno  
     print("새로운 직원의 사번, 이름을 입력하세요....")
@@ -33,29 +32,33 @@ def insert_emp(): # empno, ename, job, mgr, hiredate, sal, comm, deptno
             cursor.execute("INSERT INTO EMP(EMPNO, ENAME) VALUES (:1, :2)", [empno, ename.upper()])
             conn.commit()
             print("Data inserted successfully")
+            person_list.clear()   # 다시 한번 비워줌
         except oracledb.DatabaseError as e:
             print(f"Error inserting data: {e}")
     else:
-        print("MYEONGHWI-0001 : 사번 입력 오류입니다. 숫자만 입력 가능합니다.")
+        print("ERR-INSERT-001 : 사번 입력 오류입니다. 숫자만 입력 가능합니다.")
 
 
 def delete_emp(): # empno, ename, job, mgr, hiredate, sal, comm, deptno
-    print("삭제할 직원의 사번을 입력하세요.")
+    print("삭제할 직원의 사번을 입력하세요....")
     empno = input("사번: ")
     print(empno)
 
     if len(person_list) > 0:
-        eq = False
+        eq = False  # Boolian 변수선언
         for i in person_list:
             # i.print_person()
             if str(i.empno) == empno:
                 eq = True
-                person_list.remove(i)   # List에 있는 이전 정보비우기
+                person_list.remove(i)   # List에 있는 이전 정보삭제
         if eq  == True:
             print('해당 사번이 존재합니다.')
             try:
                 # DELETE FROM EMP WHERE EMPNO='4769'
                 cursor.execute("DELETE FROM EMP WHERE EMPNO = :1", [empno])
+                conn.commit()
+                print("Data deleted successfully")
+
                 if cursor.rowcount == 0:
                     print(f"사번 {empno}번 직원을 찾을 수 없습니다.")
                 else:
@@ -79,11 +82,12 @@ def search_emp():
         FROM EMP 
         ORDER BY EMPNO''')
         for row in cursor:
+            # print(row)
             p = Person(*row) 
             person_list.append(p)
             # p.print_person()
-            
         print(f"\n 총 {len(person_list)}명의 직원이 조회되었습니다.")
+
         for p in person_list:
             p.print_person()    # 호출 완료
     except oracledb.DatabaseError as e:
