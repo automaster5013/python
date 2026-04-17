@@ -3,64 +3,64 @@ T = int(input())
 for i in range(T):
     ox_res = input()
     total_score = 0
-    current_line = 0
+    current_streak = 0
     
     for char in ox_res:
         match char:
             case 'O':
-                current_line += 1
-                total_score += current_line
+                current_streak += 1
+                total_score += current_streak
             case 'X':
-                current_line = 0
+                current_streak = 0
             case _:
                 pass
     print(total_score)
 
 #############################################################(방법01)
 
-T = int(input())
+t = int(input())
 # 1. 인덱스 초기화
 i = 0 
-while i < T:
+while i < t:
     ox_res = input()
 
     total_score = 0 
-    current_line = 0 
+    current_streak = 0 
     
-    # 2. 문자열 탐색 인덱스 초기화
+    # 2. 문자열 탐색용 인덱스 초기화
     j = 0
     while j < len(ox_res):
         # 인덱스를 이용해 문자에 접근
         char = ox_res[j]
         
         if char == 'O':
-            current_line += 1
-            total_score += current_line
+            current_streak += 1
+            total_score += current_streak
         else:
-            current_line = 0
-        # 3. 다음 문자로 넘어가기 위해 인덱스를 + 1 
+            current_streak = 0
+        # 3. 다음 문자로 넘어가기 위해 인덱스를 1 증가
         j += 1
            
     print(total_score)
     
-    # 4. 다음 테스트 케이스로 넘어가기 위해 인덱스를 + 1 
+    # 4. 다음 테스트 케이스로 넘어가기 위해 인덱스를 1 증가
     i += 1
 
 #############################################################(방법02)
 
-T = int(input())
-for i in range(T):
+t = int(input())
+for i in range(t):
     ox_res = input()
 
     total_score = 0 
-    current_line = 0 
+    current_streak = 0 
 
     for char in ox_res:
         if char == 'O':
-            current_line += 1
-            total_score += current_line
+            current_streak += 1
+            total_score += current_streak
         else:
-            current_line = 0
+            current_streak = 0
            
     print(total_score)
 
@@ -70,11 +70,11 @@ T = int(input())
 for i in range(T):
     ox = input()
     total_score = 0
-    current_line = 0
+    current_streak = 0
     
     for char in ox:
-        current_line = current_line + 1 if char == 'O' else 0
-        total_score += current_line
+        current_streak = current_streak + 1 if char == 'O' else 0
+        total_score += current_streak
         
     print(total_score)
 
@@ -114,16 +114,16 @@ for i in range(T):
 
 #############################################################(방법06)
 
-def get_score(string, idx, line):
+def get_score(string, idx, streak):
     # 더 이상 읽을 문자가 없으면 종료 (Base Case)
     if idx == len(string):
         return 0
     
     # 현재 문자가 'O'면 streak을 높이고, 'X'면 0으로 초기화
-    new_line = line + 1 if string[idx] == 'O' else 0
+    new_streak = streak + 1 if string[idx] == 'O' else 0
     
     # (현재 내 점수) + (다음 칸부터의 점수들)을 합산하여 반환
-    return new_line + get_score(string, idx + 1, new_line)
+    return new_streak + get_score(string, idx + 1, new_streak)
 
 T = int(input())
 for i in range(T):
@@ -153,6 +153,7 @@ for i in range(T):
     print(total)
 
 #############################################################(방법08)
+
 ### Hint ###
 T = int(input())
 for x in range(T):
