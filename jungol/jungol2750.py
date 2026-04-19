@@ -1,6 +1,6 @@
 def solve():
     # 1. 과자 가격 K, 개수 N, 현재 돈 M 입력 받기
-    # input().split()을 통해 공백으로 구분된 값을 리스트로 가져옵니다.
+    # input().split()을 통해 공백으로 구분된 값을 리스트로 가져옴
     try:
         data = input().split()
         if not data:
@@ -19,7 +19,7 @@ def solve():
     needed_money = total_price - m
     
     # 4. 결과 출력
-    # 계산된 값이 0보다 작거나 같다면 돈이 충분하다는 뜻이므로 0을 출력합니다.
+    # 계산된 값이 0보다 작거나 같다면 돈이 충분하다는 뜻이므로 0을 출력
     if needed_money <= 0:
         print(0)
     else:

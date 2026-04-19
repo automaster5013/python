@@ -9,7 +9,7 @@ def solve():
     p = int(line1[2])
     
     # 2. 두 번째 줄 입력 (전체 빵의 크림 정보)
-    # 총 N * K 개의 빵 정보가 들어옵니다.
+    # 총 N * K 개의 빵 정보가 들어옴
     breads = input().split()
     
     sellable_count = 0  # 팔 수 있는 묶음의 수를 저장할 변수
