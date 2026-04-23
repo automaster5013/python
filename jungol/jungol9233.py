@@ -51,5 +51,45 @@ match (a >= 3, b >= 3):
     case _:
         print("Low")
 
-########################################(방법04)
+########################################(방법05)
+
+a = int(input())
+b = int(input())
+# print(a, b)
+condition = {
+    (True, True): "High",
+    (True, False): "Mid",
+    (False, True): "Mid",
+    (False, False): "Low"
+}
+
+print(condition[(a >= 3, b >= 3)])
+
+########################################(방법06)
+
+a = int(input())
+b = int(input())
+# print(a, b)
+score = (a >= 3) + (b >= 3) # 결과는 0, 1, 2 중 하나
+results = ["Low", "Mid", "High"]
+
+print(results[score])
+
+########################################(방법07)
+
+a = int(input())
+b = int(input())
+# print(a, b)
+if a >= 3:
+    if b >= 3:
+        print("High")
+    else:
+        print("Mid")
+else:
+    if b >= 3:
+        print("Mid")
+    else:
+        print("Low")
+
+########################################(방법08)
 
