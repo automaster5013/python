@@ -1,0 +1,58 @@
+def solution(my_string):
+    str_list = list(my_string.lower())
+    
+    n = len(str_list)
+    for i in range(n):
+        for j in range(n - 1 - i):
+            if str_list[j] > str_list[j + 1]:
+                str_list[j], str_list[j + 1] = str_list[j + 1], str_list[j]
+                
+    return "".join(str_list)
+
+###########################################################################
+
+def solution(my_string):
+
+    return "".join(sorted(my_string.lower()))
+
+###########################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
