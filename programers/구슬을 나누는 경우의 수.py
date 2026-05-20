@@ -34,8 +34,28 @@ print(solution(a2, b2))
 
 #############################################################
 
+def solution(balls, share):
+    answer = [0]
+    def backtrack(cnt, start):
+        if cnt == share:
+            answer[0] += 1
+            return
+        if cnt + (balls - start) < share:
+            return
+        for i in range(start, balls):
+            backtrack(cnt + 1, i + 1)
+            
+    backtrack(0, 0)
+    
+    return answer[0]
 
+a1, b1 = 3, 2
+a2, b2 = 5, 3
 
+print(solution(a1, b1))
+print(solution(a2, b2))
+
+#############################################################
 
 
 
