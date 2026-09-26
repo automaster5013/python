@@ -2,7 +2,7 @@
 
 A personal archive of algorithm exercises and problem-solving implementations, primarily in Python with a smaller set of C++ solutions.
 
-The repository currently contains 762 files, including 722 Python solutions and 15 C++ solutions. Most filenames correspond to problem identifiers from the original practice platform.
+The repository contains more than 700 Python files and 15 C++ solutions. Most filenames correspond to problem identifiers from the original practice platform.
 
 ## Repository map
 
@@ -28,7 +28,7 @@ Compile and run an individual C++ solution with a C++17-compatible compiler:
 
 ```bash
 g++ -std=c++17 -O2 path/to/solution.cpp -o solution
-+./solution < input.txt
+./solution < input.txt
 ```
 
 On Windows PowerShell, run the compiled program as `./solution.exe`.
